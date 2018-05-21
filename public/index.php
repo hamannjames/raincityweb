@@ -1,3 +1,3 @@
 <?php
 
-echo 'This is a rainy city 2';
+echo 'This is a rainy city 3';
