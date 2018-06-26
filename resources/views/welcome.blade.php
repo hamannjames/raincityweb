@@ -131,7 +131,7 @@
             <section id="home_wrapper">
                 <div id="home_container">
                     <div id="home_overlay--video">
-                        <video autoplay="true" loop="true">
+                        <video autoplay loop muted>
                             <source src="{{ url('/storage/media/video/rainy_cars.webm') }}" type="video/webm">
                             <source src="{{ url('/storage/media/video/rainy_cars.mp4') }}" type="video/mp4">
                         </video>
