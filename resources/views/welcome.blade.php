@@ -8,15 +8,13 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
 
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
                 color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
+                font-family: 'Roboto', Sans-serif;
                 height: 100vh;
                 margin: 0;
                 font-size: 100%;
@@ -78,7 +76,9 @@
                 position: absolute;
                 width: 100%;
                 height: 100%;
+                z-index: -1;
                 overflow: hidden;
+                pointer-events: none;
             }
 
             #home_overlay--video video {
@@ -92,6 +92,8 @@
 
             #home_overlay--filter {
                 position: absolute;
+                pointer-events: none;
+                z-index: -1;
                 top: 0;
                 left: 0;
                 width: 100%;
@@ -109,9 +111,17 @@
 
             #main-content_heading {
                 margin: 0;
-                position: relative;
                 color: #fff;
-                font-size: 2rem;
+                font-size: 2.5rem;
+                font-weight: 400;
+            }
+
+            #main-content_start {
+                display: flex;
+            }
+
+            #main-content_start--left {
+                width: 50%;
             }
         </style>
     </head>
@@ -139,6 +149,14 @@
                     <div id="home_overlay--filter"></div>
 
                     <h1 id="main-content_heading">Rain City Web</h1>
+                    <div id="main-content_start">
+                        <div id="main-content_start--left">
+                            
+                        </div>
+                        <div id="main-content_start--right">
+                            
+                        </div>
+                    </div>
                 </div>
             </section>
 
