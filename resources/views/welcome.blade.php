@@ -8,13 +8,15 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600" rel="stylesheet">
 
         <!-- Styles -->
+        <link rel="stylesheet" href="{{ URL::to('/css/src/style.css') }}">
+
+        <!-- Scripts -->
         <style>
             html, body {
                 color: #636b6f;
-                font-family: 'Roboto', Sans-serif;
                 height: 100vh;
                 margin: 0;
                 font-size: 100%;
@@ -138,29 +140,24 @@
                 </div>
             @endif
 
-            <section id="home_wrapper">
-                <div id="home_container">
-                    <div id="home_overlay--video">
+            <section id="bd_wrapper">
+                <div id="bd_container">
+                    <div id="bd_overlay--video">
                         <video autoplay loop muted>
                             <source src="{{ url('/storage/media/video/rainy_cars.webm') }}" type="video/webm">
                             <source src="{{ url('/storage/media/video/rainy_cars.mp4') }}" type="video/mp4">
                         </video>
                     </div>
-                    <div id="home_overlay--filter"></div>
+                    <div id="bd_overlay--filter"></div>
 
-                    <h1 id="main-content_heading">Rain City Web</h1>
-                    <div id="main-content_start">
-                        <div id="main-content_start--left">
-                            
-                        </div>
-                        <div id="main-content_start--right">
-                            
-                        </div>
-                    </div>
+                    <h1 id="primary_heading"></h1>
+                    <div class="primary_init"></div>
                 </div>
             </section>
 
         </main>
+
+        <script src="{{ URL::to('/js/bin/footer.rcw.js') }}"></script>
 
         <script>
             function debounce(func, wait, immediate) {
@@ -178,7 +175,7 @@
                 };
             };
 
-            let overlayVideo = document.getElementById('home_overlay--video');
+            let overlayVideo = document.getElementById('bd_overlay--video');
 
             window.aspectRatio = {
                 aspect: '',
@@ -202,6 +199,10 @@
             });
 
             window.aspectRatio.determineAspect();
+
+            let header_type = new rcwTyper('Rain City Web', {parent: '#primary_heading', function(e){console.log(e.detail.words)}});
+
+            header_type.startTyping();
         </script>
     </body>
 </html>

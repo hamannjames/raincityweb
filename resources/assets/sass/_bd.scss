@@ -26,15 +26,20 @@
 			video {
 				min-width: 100%;
 				min-height: 100%;
+				position: absolute;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
+			}
 
-				&.wide {
+			&.wide {
+				video {
 					width: 102%;
 				}
+			}
 
-				&.box {
+			&.box {
+				video {
 					height: 102%;
 				}
 			}
@@ -45,12 +50,5 @@
 
 			background-color: rgba(0,0,0,.4);
 		}
-	}
-}
-
-#primary {
-
-	&_heading {
-
 	}
 }
