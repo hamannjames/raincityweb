@@ -21,12 +21,12 @@ const rcwTyper = function(text, opts = {}, callback) {
 		let countDown = function (tick, counter, cb) {
 			return () => {
 				if (--tick >= 0) {
-					window.setTimeout(countDown, ++counter + Math.random() * 400);
+					window.setTimeout(countDown, ++counter + Math.random() * 300);
 					let letter = document.createTextNode(words.charAt(words.length - 1 - tick));
 					base.element.append(letter);
 				}
 				else {
-					base.element.dispatchEvent(new CustomEvent(base.eventName, { bubbles: true, detail: words }));
+					base.element.dispatchEvent(new CustomEvent(base.eventName, { bubbles: true, detail: base }));
 				}
 			};
 		}(times, 0);

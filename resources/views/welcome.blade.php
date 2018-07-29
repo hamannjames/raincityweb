@@ -200,7 +200,9 @@
 
             window.aspectRatio.determineAspect();
 
-            let header_type = new rcwTyper('Rain City Web', {parent: '#primary_heading', function(e){console.log(e.detail.words)}});
+            let header_type = new rcwTyper('Rain City Web', {parent: '#primary_heading'}, function(e){
+                console.log(e.detail)
+            });
 
             header_type.startTyping();
         </script>
