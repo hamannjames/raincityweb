@@ -200,7 +200,7 @@
 
             window.aspectRatio.determineAspect();
 
-            let header_type = new rcwTyper('Rain City Web', {parent: '#primary_heading'}, function(e){
+            let header_type = new rcwTyper('Rain City Web', {parent: '#primary_heading', delay: 300}, function(e){
                 console.log(e.detail)
             });
 

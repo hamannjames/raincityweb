@@ -9,7 +9,7 @@ const rcwTyper = function(text, opts = {}, callback) {
 	this.parent = opts.parent ? document.querySelector(opts.parent) : document.body;
 	this.element = opts.element ? document.createElement(opts.element) : document.createElement('span');
 	this.placement = opts.placement || 'prepend';
-	this.delay = opts.delay || 	100;
+	this.delay = opts.delay || 200;
 	this.eventName = opts.eventName || `rcwTyper_${opts.parent}`;
 
 	this.parent.appendChild(this.element);
@@ -21,7 +21,7 @@ const rcwTyper = function(text, opts = {}, callback) {
 		let countDown = function (tick, counter, cb) {
 			return () => {
 				if (--tick >= 0) {
-					window.setTimeout(countDown, ++counter + Math.random() * 300);
+					window.setTimeout(countDown, ++counter + Math.random() * base.delay);
 					let letter = document.createTextNode(words.charAt(words.length - 1 - tick));
 					base.element.append(letter);
 				}
