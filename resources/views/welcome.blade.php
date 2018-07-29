@@ -155,6 +155,35 @@
                 </div>
             </section>
 
+            <div id="player" style="position:absolute;"></div>
+            <section id="music_player" style="position:absolute; top: 0; left: 0;">
+                <div id="music_controls">
+                    <span id="music_controls--play">Play</span>
+                    <span id="music_controls--pause" class="action">Pause</span>
+                </div>
+            </section>
+
+            <style>
+                #music_controls {
+                    display: flex;
+                }
+
+                #music_player {
+                    background: rgba(0,0,0,.5);
+                    padding: .5rem;
+                    display: none;
+                }
+
+                #music_controls > * {
+                    color: #fff;
+                    display: none;
+                }
+
+                #music_controls > *.action {
+                    display: block;
+                }
+            </style>
+
         </main>
 
         <script src="{{ URL::to('/js/bin/footer.rcw.js') }}"></script>
@@ -200,11 +229,36 @@
 
             window.aspectRatio.determineAspect();
 
+            
             let header_type = new rcwTyper('Rain City Web', {parent: '#primary_heading', delay: 300}, function(e){
                 console.log(e.detail)
             });
-
+            
             header_type.startTyping();
+
+            var tag = document.createElement('script');
+
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            var player;
+
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    height: '0',
+                    width: '0',
+                    videoId: 'LsBrT6vbQa8',
+                    events: {
+                        'onReady': onPlayerReady
+                    }
+                });
+            }
+
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+            
         </script>
     </body>
 </html>
